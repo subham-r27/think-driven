@@ -1,0 +1,276 @@
+:root {
+    /* Color Palette */
+    --color-background: #FFFFFF;
+    --color-background-alt: #F8F9FA;
+    --color-text-primary: #212529;
+    --color-text-secondary: #6C757D;
+    --color-accent: #007BFF;
+    --color-accent-hover: #0056b3;
+    --color-border: #DEE2E6;
+    --color-card-shadow: rgba(0, 0, 0, 0.05);
+
+    /* Font Families */
+    --font-primary: 'Poppins', sans-serif;
+
+    /* Spacing & Radius */
+    --spacing-unit: 8px;
+    --border-radius: 4px;
+}
+
+/* Basic Reset & Body Styles */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.page-container {
+    max-width: 0 auto;
+    margin: 0 auto;
+    padding: calc(var(--spacing-unit) * 6) calc(var(--spacing-unit) * 2);
+    background-color: #004280; /* 48px 16px */
+}
+
+.page-header {
+    text-align: center;
+    color: white;
+    margin-bottom: calc(var(--spacing-unit) * 6); /* 64px */
+    background-color: #004280;
+    transform: translateY(-5px);
+}
+.icons {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.icons:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px var(--color-card-shadow);
+}
+
+.page-header h1 {
+    font-size: 2.5rem; /* 40px */
+    font-weight: 700;
+    margin-bottom: var(--spacing-unit);
+}
+
+.page-header p {
+    font-size: 1.125rem; /* 18px */
+    color: white;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.team-section {
+    margin-bottom: calc(var(--spacing-unit) * 8); /* 64px */
+}
+
+.section-title {
+    font-size: 3rem; /* 28px */
+    font-weight: 600;
+    margin-bottom: calc(var(--spacing-unit) * 4); /* 32px */
+    text-align: center;
+    position: relative;
+    padding-bottom: var(28px);
+}
+
+/* Optional: Underline for section title */
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background-color: var(--color-accent);
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: calc(var(--spacing-unit) * 3); /* 32px */
+}
+.team-member-card {
+    background-color: #bdedff;
+    border: 1px solid var(--color-border);
+    border-radius: 1.5rem;
+    text-align: center;
+    padding: calc(20px * 3); /* 24px */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px var(--color-card-shadow);
+}
+
+.team-member-photo {
+    width: 300px;
+    height: 290px;
+    border-radius: 5%;
+    object-fit: cover;
+    margin: 0 auto calc(var(--spacing-unit) * 2);
+    box-shadow: 1px 4px 8px rgba(0,0,0,0.1);
+}
+
+.card-content {
+    /* Wrapper for text content */
+}
+
+.team-member-name {
+    font-size: 1.6rem; /* 20px */
+    font-weight: 600;
+    margin-bottom: calc(var(--spacing-unit) * 0.5); /* 4px */
+    color: var(--color-text-primary);
+}
+
+.team-member-role {
+    font-size: 1.2rem; /* 16px */
+    font-weight: 400;
+    color: var(--color-text-secondary);
+    margin-bottom: calc(var(--spacing-unit) * 2); /* 16px */
+}
+
+.team-member-bio-link {
+    font-size: 1rem; /* 14.4px */
+    font-weight: 500;
+    color: var(--color-accent);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.team-member-bio-link:hover {
+    color: var(--color-accent-hover);
+    text-decoration: underline;
+}
+
+/* Style for the disabled placeholder link */
+.disabled-link {
+    color: var(--color-text-secondary);
+    cursor: default;
+    pointer-events: none; /* Disables click events */
+}
+
+.disabled-link:hover {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+}
+@media (max-width: 1024px) {
+   .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+   .page-header h1 {
+        font-size: 2.25rem;
+    }
+}
+
+/* For Mobile Devices (e.g., screen width <= 600px) */
+@media (max-width: 600px) {
+   .team-grid {
+        grid-template-columns: 1fr; /* Stack to a single column */
+    }
+
+   .page-container {
+        padding: calc(var(--spacing-unit) * 4) var(--spacing-unit); /* 32px 8px */
+    }
+
+   .page-header h1 {
+        font-size: 2rem;
+    }
+
+   .page-header p {
+        font-size: 1rem;
+    }
+
+   .section-title {
+        font-size: 1.5rem;
+    }
+}
+
+.site-footer {
+    background-color: #004280;
+    color: white;
+    padding: calc(var(--spacing-unit) * 5) 0;
+    margin-top: auto;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 calc(var(--spacing-unit) * 2);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: calc(var(--spacing-unit) * 4);
+}
+
+.footer-column h4 {
+    font-family: var(--font-heading);
+    font-weight: 400;
+    font-size: 1.75rem;
+    color: var(--color-background);
+    margin-bottom: calc(var(--spacing-unit) * 2);
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: var(--spacing-unit);
+}
+
+.footer-column a {
+    color: var(--color-footer-text);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-column a:hover {
+    color: var(--color-footer-link-hover);
+}
+
+.copyright-bar {
+    text-align: center;
+    margin-top: calc(var(--spacing-unit) * 4);
+    padding-top: calc(var(--spacing-unit) * 2);
+    border-top: 1px solid #333;
+    font-size: 1rem;
+}
+.iconss{
+    width: 30px;
+    transition: transform 0.05s ease, box-shadow 0.3s ease;
+}
+.iconss:hover{
+    transform: translateY(-7px);
+    box-shadow: 0 10px 20px var(--color-card-shadow);
+}
+.listss{
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+.listss:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px var(--color-card-shadow);
+}
+.footericon{
+    width: 90px;
+    opacity: 0.9;
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+   .footer-container {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        text-align: center;
+    }
+}
